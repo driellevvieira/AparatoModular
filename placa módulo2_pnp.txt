@@ -1,0 +1,23 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=placa módulo2
+*Date=09:26:11
+*CreatedBy=Fritzing 0.9.3b.04.19.5c895d327c44a3114e5fcc9d8260daf0cbb52806
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;;;56.6087;-49.9146;0;Bottom;Servo Motor
+2;;;38.8647;-41.6842;90;Bottom;ESP32
+3;;THT;10.8887;-63.8846;0;Bottom;Conector 1
+4;;;34.9997;-4.20663;0;Bottom;Piezoelectric Sensor1
+5;;Breakout board;50.1465;-93.3689;0;Bottom;KY-032 
+6;;DIP (Dual Inline) [THT];35.0187;-56.2646;180;Bottom;U5
+7;;THT;10.8887;-51.1846;180;Bottom;Conector 2
+8;;Breakout board;32.3665;-93.3689;0;Bottom;KY-032
