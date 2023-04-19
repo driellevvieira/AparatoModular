@@ -1,0 +1,47 @@
+#include <Arduino.h>
+#include <Servo.h>
+#include "pitches.h"
+
+Servo servoMotor;
+#define SERVO_PIN 33
+
+void setup() {
+  // put your setup code here, to run once:
+   servoMotor.attach(SERVO_PIN);
+   Serial.begin(115200);
+   servoMotor.write(0);
+   Serial.println("Começou");
+}
+
+bool flag = 1;
+float filter = 0;
+void loop() {
+  // put your main code here, to run repeatedly:
+
+  filter += 0.01*(analogRead(36)-filter);
+ Serial.println(filter);
+  delay(1);
+
+  if (filter > 10 && !flag) {
+    flag = 1;
+    for (int pos = 0; pos <= 180; pos += 10) {
+      // in steps of 1 degree
+      
+      servoMotor.write(pos);
+      delay(20); // waits 15ms to reach the position
+    }
+    Serial.println("Filter maior que 1000");
+    Serial.println(flag);
+  }
+  if (filter < 1 && flag){
+    flag = 0;
+     //rotates from 180 degrees to 0 degrees
+    for (int pos = 180; pos >= 0; pos -= 10) {
+    servoMotor.write(pos);
+    delay(20); // waits 15ms to reach the position
+    }
+    Serial.println("Filter menor que 500");
+    Serial.println(flag);
+   }
+  
+}
